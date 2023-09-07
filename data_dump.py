@@ -27,3 +27,4 @@ if __name__=="__main__":
 
     ## insert converted json into MongoDB
     client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_records)
+    a

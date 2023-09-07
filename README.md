@@ -20,5 +20,5 @@ git --version
 ```
 ### To Download dataset
 ```bash
-wget https://raw.githubusercontent.com/geddadasuresh84326/ML-Project-Sensor-fault-detection/main/aps_failure_training_set1.csv
+wget https://raw.githubusercontent.com/geddadasuresh84326/ML-Project-Sensor-fault-detection/main/aps_failure_training_set1.csva
 ```
