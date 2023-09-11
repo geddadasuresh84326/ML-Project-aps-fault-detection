@@ -12,3 +12,7 @@ class EnviromentVariable():
 env_vrble = EnviromentVariable()
 mongo_client = pymongo.MongoClient(env_vrble.mongodb_url)
 
+TARGET_COLUMN_MAPPING = {
+    "pos":1,
+    "neg":0
+}

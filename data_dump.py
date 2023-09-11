@@ -25,6 +25,6 @@ if __name__=="__main__":
     json_records = list(json.loads(df.T.to_json()).values())
     print(json_records[0])
 
-    ## insert converted json into MongoDB
+    ## insert converted json into MongohDB
     client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_records)
     
