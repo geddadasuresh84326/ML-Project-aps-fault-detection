@@ -1,12 +1,16 @@
 import pandas as pd
 import numpy as np
 from sensor.config import mongo_client
+import pymongo
 from sensor.logger import logging
 from sensor.exception import SensorException
 import os,sys
 import yaml
 import dill
 from sklearn.preprocessing import LabelEncoder
+
+# from dotenv import load_dotenv
+# load_dotenv()
 
 # function to get the data from mongoDB
 
@@ -22,6 +26,8 @@ def get_collection_as_dataframe(database_name:str,collection_name:str)->pd.DataF
     Pandas DataFrame of a collection
     '''
     try:
+        client = pymongo.MongoClient("mongodb+srv://mongo1:mongo@cluster0.rmfujwk.mongodb.net/?retryWrites=true&w=majority")
+        logging.info(f"mongo client : {mongo_client}")
         logging.info(f"Reading data from database [{database_name}] and collection [{collection_name}]started")
         df =  pd.DataFrame(list(mongo_client[database_name][collection_name].find()))
         if "_id" in df.columns:
